@@ -1,0 +1,94 @@
+Justin Redmond
+COMP 278-06
+Lab 2 Solution
+
+1.) Convert 1590 to binary.
+1590 - 2^10 = 566
+566 - 2^9 = 54
+54 - 2^5 = 18
+18 - 2^4 = 2
+2 - 2^1 = 0
+Answer: 0b0110 0011 0010
+
+2.) Convert 0b101110110 to decimal.
+(0 * 2^0)+(1 * 2^1)+(1 * 2^2)+(0 * 2^3)+(1 * 2^4)+(1 * 2^5)+(1 * 2^6)+(1 * 2^7)+(0 * 2^8)+(1 * 2^9)
+2 + 4 + 16 + 32 + 64 + 128 + 512
+Answer: 758
+
+3.) Convert 0b1100 0000 0001 1010 0001 0101 1011 1010 1101 to hexadecimal.
+1101 = 8 + 4 + 0 + 1 = 13 = D
+1010 = 8 + 0 + 2 + 0 = 10 = A
+1011 = 11 = B
+0101 = 5
+0001 = 1
+1010 = 10 = A
+0001 = 1
+0000 = 0
+1100 = 12 = C
+Answer: 0xC01A15BAD
+
+4.) Convert 0b100 001 101 101 to octal.
+101 = 4 + 0 + 1 = 5
+101 = 5
+001 = 1
+100 = 4
+Answer: 0o4155
+
+5.) Convert 0o31337 to binary.
+0o3 = 011
+0o1 = 001
+0o7 = 111
+Answer: 0b0011 0010 1101 1111
+
+6.) Convert 0xBADF00D to binary and then to octal.
+0xB = 11
+0xA = 10
+0xD = 13
+0xF = 15
+0x0 = 0
+0b->0o001 011 101 011 011 111 000 000 001 101
+001 = 1
+011 = 3
+101 = 5
+Answer: 0b1011 1010 1101 1111 0000 0000 1101; 0o1353370015
+
+7.) Convert 0o6157 to binary and then to decimal.
+0o6 = 110
+2^0 + 2^1 + 2^2 + 2^3 + 2^4 + 2^6 + 2^7 + 2^11 + 2^12
+1 + 2 + 4 + 8 + 16 + 64 + 128 + 2048 + 4096
+Answer: 0b1100 0110 1111; 6367
+
+8.) Convert 497 to binary. Then, use two’s complement to convert 497 to -497 in binary.
+497 - 256 = 241
+241 - 128 = 113
+113 - 64 = 49
+49 - 32 = 17
+17 - 16 = 1
+1 - 1 = 0
+0001 1111 0001, copy the digit in the left, then invert 0 with 1 and vice-versa
+Answer: 0b1110 0000 1111
+
+9.) Convert 900.79 to binary up to the 1/16ths spot.
+900 - 512 = 388
+388 - 256 = 132
+132 - 128 = 4
+4 - 4 = 0
+.79 - .5 = .29
+.29 - .25 = .04
+1/8 = .125
+1/16 = .0625
+Answer: 0b0001 1100 0100.1100
+
+10.) Count from 0 through 10 in ternary (base 3).
+Note: the algorithm for counting is similar regardless of the number base. Show the place values.
+- Ternary counts by 0, 1, 2
+1 = 001
+2 = 002 
+3 = 010
+4 = 011
+5 = 012
+6 = 020
+7 = 021
+8 = 022
+9 = 100
+10 = 101
