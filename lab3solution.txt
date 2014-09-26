@@ -1,0 +1,114 @@
+Justin Redmond
+COMP 278-05
+Joey Lawrance
+9/26/2014
+Lab 3 Solution
+
+1.) Let A and B be two 2-bit binary numbers (i.e., A1 A0 and B1 B0). Write out a truth table for A less than or equal to B.
+	For example, 0b10 is less than or equal to 0b11, so the output for that row should be true.
+	
+	A0A1|B0B1| f(a<=b)
+	 0 0| 0 0|	1	
+	 0 0| 0 1|	1	
+	 0 0| 1 0|	1	
+	 0 0| 1 1|	1	
+	 0 1| 0 0|	0		
+	 0 1| 0 1|	1	
+	 0 1| 1 0|	1	
+	 0 1| 1 1|	1	
+	 1 0| 0 0|	0		
+	 1 0| 0 1|	0		
+	 1 0| 1 0|	1	
+	 1 0| 1 1|	1	
+	 1 1| 0 0|	0		
+	 1 1| 0 1|	0		
+	 1 1| 1 0|	0		
+	 1 1| 1 1|	1	
+	
+2.) Write out the equivalent logic expression for the previous answer.
+
+	A0A1|B0B1|f(a<=b)|	Logic
+	 0 0| 0 0|	1	 |	A0'A1'· B0'B1'+
+	 0 0| 0 1|	1	 |	A0'A1'· B0'B1+
+	 0 0| 1 0|	1	 |	A0'A1'· B0B1'+
+	 0 0| 1 1|	1	 |	A0'A1'· B0B1+
+	 0 1| 0 0|	0	 |	
+	 0 1| 0 1|	1	 |	A0'A1· B0'B1+
+	 0 1| 1 0|	1	 |	A0'A1· B0B1'+
+	 0 1| 1 1|	1	 |	A0'A1· B0B1+
+	 1 0| 0 0|	0	 |	
+	 1 0| 0 1|	0	 |	
+	 1 0| 1 0|	1	 |	A0A1'· B0B1'+
+	 1 0| 1 1|	1	 |	A0A1'· B0B1+
+	 1 1| 0 0|	0	 |	
+	 1 1| 0 1|	0	 |	
+	 1 1| 1 0|	0	 |	
+	 1 1| 1 1|	1	 |	A0A1· B0B1
+
+	 A0'A1'· B0'B1'+A0'A1'· B0'B1+A0'A1'· B0B1'+A0'A1'· B0B1+
+3.) Express the majority circuit (introduced in lecture) as an equivalent function table by omitting the Z input column.
+
+	 X|	Y| Majority
+	 0| 0|	0
+	 0| 1|	Z
+	 1| 0|	Z
+	 1| 1|	1
+
+4.) Write out the truth table for the minority circuit (it’s true when the minority of X, Y, and Z are true).
+
+	 X| Y| Z| Minority
+	 0| 0| 0|	1
+	 0| 0| 1|	1
+	 0| 1| 0|	1
+	 0| 1| 1|	0
+	 1| 0| 0|	1
+	 1| 0| 1|	0
+	 1| 1| 0|	0
+	 1| 1| 1|	0
+
+5.) Write out the equivalent logic expression for the previous answer.
+
+	 X| Y| Z| Minority	| Logic
+	 0| 0| 0|	1		| X'Y'Z'+
+	 0| 0| 1|	1		| X'Y'Z+
+	 0| 1| 0|	1		| X'YZ'+
+	 0| 1| 1|	0		|
+	 1| 0| 0|	1		| XY'Z'	
+	 1| 0| 1|	0		|	
+	 1| 1| 0|	0		|	
+	 1| 1| 1|	0		|	
+
+6.) What is 0b111100 + 0b11111? Show all place values, and in binary show carrys and the sum.
+	(You may check work by doing binary to decimal conversion)
+	1111			
+					
+	0111100			60
+	0011111			31
+   +_______		   +__
+	1011011			91
+
+7.) What is 0b1011011 + 0b1110100? Show all place values, and in binary show carrys and the sum.
+	(You may check work by doing binary to decimal conversion)
+	111			   1
+	
+	01011011		91
+	01110100	   116
+   +________	  +___
+	11001111	   207
+	
+8.) What is 0b101110101 - 0b101101? Show all place values, and in binary show carrys and the sum.
+	(You may check work by doing binary to decimal conversion)
+									   1111 111
+	
+	000101110101		373			000101110101		373
+	000000101101		 45	 	->	000011010011		-45
+   -____________	   -___		   -____________	   +___
+									001001001000		328
+
+9.) What is 0b110100 - 0b10111000? Show all place values, and in binary show carrys and the sum.
+	(You may check work by doing binary to decimal conversion)
+	
+	00110100			 52			000000110100		52
+	10111000			184		-> 	000101001000	  -184
+   -________		   -___		   -____________	 +____
+									000101111100	  -132
