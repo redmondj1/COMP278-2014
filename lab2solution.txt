@@ -1,6 +1,8 @@
 Justin Redmond
 COMP 278-06
+Joey Lawrance
 Lab 2 Solution
+9/19/2014
 
 1.) Convert 1590 to binary.
 1590 - 2^10 = 566

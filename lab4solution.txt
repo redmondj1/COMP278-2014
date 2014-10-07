@@ -1,0 +1,110 @@
+Justin Redmond
+COMP 278-05
+Joey Lawrance
+10/3/2014
+Lab 4 Solution
+
+Use the laws to simplify expressions. Label the laws that you apply as you apply them (no more than one law per line).
+
+1.)	Show (a * b)' * (a' + b) * (b' + b) = a'
+		(a' + b') * (a' + b) * (b' + b) = a'				DeMorgan's
+		(a' + b') * (a' + b) * 1 =  a'						Complement
+		(a' + b') * (a' + b) = a'							Identity
+		(a' * a') + (b' * a') + (a' * b) + (b' * b) = a'	Distributive
+		a' + (b' * a') + (a' * b) + (b' * b) = a'			Idempotence
+		a' + (b' * a') + (a' * b) + 0 = a'					Complement
+		a' + (b' * a') + (a' * b) = a'						Identity
+		a' + (a' * b') + (a' * b) = a'						Commutative
+		a' + (a' * b) = a'									Absorption
+		a' = a'												Absorption
+	
+2.)	Show c + (b * c)' = 1
+		c + (b' + c') = 1		DeMorgan's
+		c + c' + b' = 1			Commutative
+		1 + b' = 1				Complement
+		1 = 1					Identity
+
+3.)	Show (a + c) * (a * d + a * d') + a * c + c = a + c
+		(a + c) * [a * (d + d')] + c + c * a = a + c	Commutative
+		(a + c) * [a * (d + d')] + c = a + c			Absorption
+		(a + c) * [a * (d + d')] + c = a + c			Distributive
+		(a + c) * (a * 1) + c = a + c					Complement
+		(a + c) * a + c = a + c							Identity
+		a * (a + c) + c = a + c							Commutative
+		a + c = a + c									Absorption
+		
+
+4.) Simplify a' * (a + b) + (b + a * a) * (a + b')
+		a' * (a + b) + (b + a) * (a + b')								Idempotence
+		(a' * a) + (a' * b) + (b * a) + (a * a) + (b * b') + (a * b')	Distributive
+		0 + (a' * b) + (b * a) + (a * a) + 0 + (a * b')					Complement
+		(a' * b) + (b * a) + (a * a) + (a * b')							Identity
+		(a' * b) + (b * a) + a + (a * b')								Idempotence
+		(a' * b) + a + (a * b) + (a * b')								Commutative
+		(a' * b) + a + (a * b')											Absorption
+		
+5.) Show (a' * b') + (a' * b) + (a * b') = (a * b)'
+		a' * (b' + b) + (a * b') = (a * b)'		Distributive
+		a' * 1 + (a * b') = (a * b)'			Complement
+		a' + (a * b') = (a * b)'				Identity
+		(a' + a) * (a' + b') = (a * b)'			Distributive
+		1 * (a' + b') = (a * b)'				Complement
+		(a' + b') = (a * b)'					Identity
+		(a * b)' = (a * b)'						DeMorgan's
+
+Find the dual form of these expressions (DO NOT simplify):
+
+6.) (a + b)' + c * a' + 1
+	(a + b)' + (c * a') + 1
+	(a + b)' + (c * a') + 0
+	(a * b)' * (c + a') * 0
+
+7.) 1 + 1 * 0'
+	1 + (1 * 0')
+	0 + (0 * 1')
+	0 * (0 + 1')
+
+Convert this Karnaugh map to a truth table (AB are the rows, XY are the columns).
+		AB
+	  XY__|00|01|11|10
+		00| 1| 0| 0| 0
+		01| 1| 1| 0| 0
+		11| 1| 1| 1| 0
+		10| 1| 1| 1| 1
+		
+	 A| B| X| Y| F(ABXY)
+	 0| 0| 0| 0|	1
+	 0| 0| 0| 1|	1
+	 0| 0| 1| 0|	1
+	 0| 0| 1| 1|	1
+	 0| 1| 0| 0|	0
+	 0| 1| 0| 1|	1
+	 0| 1| 1| 0|	1
+	 0| 1| 1| 1|	1
+	 1| 0| 0| 0|	0
+	 1| 0| 0| 1|	0
+	 1| 0| 1| 0|	1
+	 1| 0| 1| 1|	0
+	 1| 1| 0| 0|	0
+	 1| 1| 0| 1|	0
+	 1| 1| 1| 0|	1
+	 1| 1| 1| 1|	1
+
+	 F(ABXY) = A'B' + XY' + A'Y + BX
+	 
+Complete the following exercises using Logisim. Open lab4solution.circ in this folder.
+
+1.)	Implement the majority (of 3 input bits) circuit using a 4-1 multiplexer.
+
+2.) Implement a full adder (a + b + cin) using two 4-1 multiplexers (one multiplexer
+	for carry out, one multiplexer for sum, using the same input variables).
+	
+	 a| b|cin||cout|sum
+	 0| 0| 0 ||  0 | 0
+	 0| 0| 1 ||  0 | 1
+	 0| 1| 0 ||  0 | 1
+	 0| 1| 1 ||  1 | 0
+	 1| 0| 0 ||  0 | 1
+	 1| 0| 1 ||  1 | 0
+	 1| 1| 0 ||  1 | 0
+	 1| 1| 1 ||  1 | 1
