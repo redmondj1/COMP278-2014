@@ -1,7 +1,39 @@
 = COMP278 (Computer Architecture)
 
+== Week 7
+
+* https://github.com/lawrancej/COMP278-2014/blob/master/lab-instructions/lab6.adoc[Lab 6: Sequential logic]
+
+== Week 6
+
+* Lecture 12: CPU Overview
+* Lecture 11: Hand back midterms
+* https://github.com/lawrancej/COMP278-2014/blob/master/lab-instructions/lab6.adoc[Lab 6: Sequential logic]
+* No Monday meeting: Columbus Day
+
+== Week 5
+
+* Lecture 10: Sequential logic, finite state machines
+* Lecture 9: Latches, flip-flops, registers
+* Lab 5: Midterm!
+
+== Week 4
+
+* http://lawrancej.github.io/COMP278-2014/exams/practice-midterm2.pdf[Lecture 8: Practice midterm II]
+* http://lawrancej.github.io/COMP278-2014/exams/practice-midterm1.pdf[Lecture 7: Practice midterm I (PDF)] https://github.com/lawrancej/COMP278-2014/blob/master/exams/practice-midterm1.adoc[(Asciidoc)]
+** https://github.com/lawrancej/COMP278-2014/blob/master/scribbles/midterm-your-head-asplode2.png[Solutions (PNG)]
+** https://github.com/lawrancej/COMP278-2014/blob/master/exams/practice-midterm1-solutions.adoc[Solutions (Asciidoc)]
+* https://github.com/lawrancej/COMP278-2014/blob/master/lab-instructions/lab4.adoc[Lab 4: Boolean algebra, Karnaugh maps, multiplexers]
+
+== Week 3
+
+* https://github.com/lawrancej/COMP278-2014/blob/master/lectures/lecture6.adoc[Lecture 6: Function tables, multiplexers]
+* https://github.com/lawrancej/COMP278-2014/blob/master/lectures/lecture5.adoc[Lecture 5: Boolean algebra, Gray codes and Karnaugh maps]
+* https://github.com/lawrancej/COMP278-2014/blob/master/lab-instructions/lab3.adoc[Lab 3: Logic representation and binary arithmetic]
+
 == Week 2
 
+* https://github.com/lawrancej/COMP278-2014/blob/master/lectures/lecture4.adoc[Lecture 4: Binary arithmetic]
 * https://github.com/lawrancej/COMP278-2014/blob/master/lectures/lecture3.adoc[Lecture 3: Logic representation overview]
 * https://github.com/lawrancej/COMP278-2014/blob/master/lab-instructions/lab2.adoc[Lab 2: Number representation practice]
 
