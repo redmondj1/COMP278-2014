@@ -1,4 +1,4 @@
-
+Machine Code	<-	Assembly		<-	C/C++/Java(Script)
 op   Rd  Ra  Rb
 Arithmetic/Logic
 fedcba9876543210
