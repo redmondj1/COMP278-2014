@@ -1,0 +1,51 @@
+;	Justin Redmond
+;	COMP 278-06
+;	Joey Lawrance
+;	October 24, 2014
+	
+;Custom source code for max(a,b), C++ based
+;int a,b,max;
+;int main()
+;	{
+;	if(a > b)
+;		{max = a;}
+;	else
+;		{max = b;}
+;	return 0;
+;	}
+	
+;Opcode is the first nibble (hex digit)
+;Destination or source register is the second nibble (hex digit)
+;The last byte is either two registers or a literal address
+;Also, make sure CPU works before using.
+;STOR function doesn't work properly in this CPU
+
+;Translate to equivalent code	
+00	a = RAM[0x50]		;keep data location out of the program location
+01	b = RAM[0x51]
+02	c = a - b			
+03	if(c > 0) goto 06	;skip next two lines
+04	max = b				;else, use register d
+05	if(R0 == 0) goto 08	;skip 06
+06	max = a				;then
+07	;DONE
+
+;Translate to Assembly Code
+00 	LOAD Ra, 0x50		;Ra = Register a
+01	LOAD Rb, 0x51
+02	SUB Rc, Ra, Rb
+03	JZG Rc, 0x06
+04	MOV Rd, Rb			;copy location
+05	JZE R0, 0x08
+06	MOV Rd, Ra
+07	;DONE
+
+;Translate to Machine Code
+00	ca50	;set to 0008
+01	cb51	;set to 0005
+02	1cab
+03	ac06
+04	7d0b
+05	8008
+06	7d0a
+07	0000 	;at least it works now

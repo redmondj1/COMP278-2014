@@ -1,0 +1,72 @@
+;	Justin Redmond
+;	COMP 278-06
+;	Joey Lawrance
+;	October 24, 2014
+	
+;Custom source code for int sum(int length, int[] array), C++ based
+;int sum(0), length(4);	//let length be 4 for this example
+;int[] array;
+;int main()
+;	{
+;	for (int i = 0; i < length; i++;)
+;		{
+;		sum += array[i];
+;		}
+;	return 0;
+;	}
+
+;Opcode is the first nibble (hex digit)
+;Destination or source register is the second nibble (hex digit)
+;The last byte is either two registers or a literal address
+;Also, make sure CPU works before using.
+;STOR function doesn't work properly in this CPU
+	
+;Translate to equivalent code
+00	sum = RAM[0x50]			;register a
+01	length = RAM[0x51]		;register b
+02	array = 0x60			;register c, have enough locations for length
+03	i = 1;					;register 1	
+04	if(length == 0) goto 0b	;skip the for-loop if length is 0
+05	arrayi = array			;value of array
+06	*arrayi					;pointer of array
+07	array = array + i		;next position in the array
+08	sum = sum + arrayi
+09	length = length - i		
+0a  if(length > 0) goto 05	;repeat until length = 0
+0b	;DONE
+
+;Translate to Assembly Code
+00	LOAD Ra, 0x50
+01	LOAD Rb, 0x51			;set to 0004
+02	MOV Rc, 0x60			;have array be the value of the first position
+03	MOV R1, 01				;constant 0001
+04	JZE Rb, 0b
+05	MOV	Rd, Rc
+06	LOAD Rd					;use opcode d in hex
+07	ADD Rc, Rc, R1
+08	ADD Ra, Ra, Rd
+09	SUB Rb, Rb, R1
+0a	JZG Rb, 05
+0b	;DONE
+
+;Translate to Machine Code
+00	ca50
+01	cb51
+02	7c60	;set 4 locations to 1, 2, 3, 4, sum should be 10, rather 0x0a
+03	7101	
+04	8b0b
+05	0dc0
+06	dd00	;last two bits can be anything for opcode d
+07	0cc1
+08	0aad
+09	1bb1
+0a	ab05
+0b	0000
+
+;Translating an array using pointer method
+;	array[i]
+;	*(array+i)
+;	array = 0x50
+;	i = 2
+;	arrayi = array + i // 0x50 + 2 = 0x52
+;	LOAD arrayi
